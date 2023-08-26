@@ -11,6 +11,47 @@ function rollDice(diceSize = 6){
 }
 
 
+function rollDiceWithDisadvantage(diceSize = 6){
+	let result = {
+		finalResult: null,
+		rolls: []
+	}
+
+	result.rolls = [
+		rollDice(diceSize), 
+		rollDice(diceSize)
+	];
+	//let someArray = [1, 2, 3, 4];
+
+	// Copy result.Rolls into a new array that only exists
+	// for Math.min() to analyse
+	result.finalResult = Math.min(...result.rolls);
+
+	return result;
+}
+
+function rollDiceWithAdvantage(diceSize = 6){
+	let result = {
+		finalResult: null,
+		rolls: []
+	}
+
+	result.rolls = [
+		rollDice(diceSize), 
+		rollDice(diceSize)
+	];
+	//let someArray = [1, 2, 3, 4];
+
+	// Copy result.Rolls into a new array that only exists
+	// for Math.max() to analyse
+	result.finalResult = Math.max(...result.rolls);
+
+	return result;
+}
+
+
 module.exports = {
-	rollDice
+	rollDice,
+	rollDiceWithDisadvantage,
+	rollDiceWithAdvantage
 }
