@@ -1,3 +1,8 @@
+require('dotenv').config();
+
+
+console.log("Current node environment is: \n" + process.env.NODE_ENV);
+console.log("Cool message is: \n" + process.env.COOL_MESSAGE);
 
 
 function rollDice(diceSize = 6){

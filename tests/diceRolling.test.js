@@ -41,6 +41,9 @@ describe("Tabletop RPG gamer...", () => {
 
 		expect(rollResult.rolls).toHaveLength(2);
 		expect(rollResult.rolls).toContain(rollResult.finalResult);
+		let sortedRolls = [...rollResult.rolls].sort();
+		// expect(sortedRolls[0] > sortedRolls[1]).toBe(true);
+		expect(sortedRolls[0]).toBeGreaterThanOrEqual(sortedRolls[1]);
 	});
 
 
